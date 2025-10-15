@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Page Design</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Navbar Styling */
+        .navbar {
+            background-color: #343a40;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffbf00;
+        }
+
+        .navbar-nav .nav-link {
+            margin: 0 10px;
+            color: #ffffff;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffbf00;
+        }
+
+        .form-control {
+            width: 200px;
+        }
+
+        /* Banner Image Styling */
+        .banner {
+            background-image: url('sh.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        .banner p {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .banner button {
+            background-color: #ffbf00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .banner button:hover {
+            background-color: #e6a800;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 2rem;
+            }
+            .banner p {
+                font-size: 1rem;
+            }
+            .banner {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner h1 {
+                font-size: 1.5rem;
+            }
+            .banner p {
+                font-size: 0.9rem;
+            }
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .add-to-cart {
+            background-color: #ffbf00; /* Yellow color */
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #e6ac00; /* Darker yellow on hover */
+        }
+        
+        .offer-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #f8f9fa;
+        }
+
+        .offer-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .offer-details {
+            margin-left: 30px;
+            color: #333;
+        }
+
+        .offer-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff4500;
+        }
+
+        .offer-text {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        .offer-button {
+            background-color: #ffbf00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .offer-button:hover {
+            background-color: #e6a800;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .offer-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .offer-details {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+		
+		  .testimonial-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .testimonial-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            color: #343a40;
+        }
+
+        .testimonial-card {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin: 20px;
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555555;
+        }
+
+        .customer-name {
+            margin-top: 15px;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .customer-position {
+            font-size: 1rem;
+            color: #888888;
+        }
+
+        .customer-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .testimonial-card {
+                margin-bottom: 30px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">T-Crafty</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Black Friday Sale</h1>
+            <p>Get up to 50%</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Popular T-Shirts</h2>
+        <div class="row">
+            <!-- Product Cards -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="pink.png" alt="T-Shirt 1" class="img-fluid">
+                    <h5>T-Shirt Pink</h5>
+                    <p>Price: $15.99</p>
+                    <button class="add-to-cart" data-product-id="1">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="dark.png" alt="T-Shirt 2" class="img-fluid">
+                    <h5>T-Shirt Black</h5>
+                    <p>Price: $14.99</p>
+                    <button class="add-to-cart" data-product-id="2">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart2.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="orange.png" alt="T-Shirt 3" class="img-fluid">
+                    <h5>T-Shirt Orange</h5>
+                    <p>Price: $12.99 </p>
+                    <button class="add-to-cart" data-product-id="3">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart3.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Product Cards -->
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="hood.png" alt="T-Shirt 4" class="img-fluid">
+                    <h5>Black Hoodie</h5>
+                    <p>Price: $16.99 </p>
+                    <button class="add-to-cart" data-product-id="4">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart4.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="blue.png" alt="T-Shirt 5" class="img-fluid">
+                    <h5>Blue Hoodie</h5>
+                    <p>Price: $18.99 </p>
+                    <button class="add-to-cart" data-product-id="5">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart5.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="red.png" alt="T-Shirt 6" class="img-fluid">
+                    <h5>Red Hoodie</h5>
+                    <p>Price: $19.99</p>
+                    <button class="add-to-cart" data-product-id="6">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart6.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="navy.png" alt="T-Shirt 7" class="img-fluid">
+                    <h5>Shirt</h5>
+                    <p>Price: $17.99</p>
+                    <button class="add-to-cart" data-product-id="7">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart7.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="style.png" alt="T-Shirt 8" class="img-fluid">
+                    <h5>Shirt Blue</h5>
+                    <p>Price: $20.99</p>
+                    <button class="add-to-cart" data-product-id="8">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart8.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <img src="light.png" alt="T-Shirt 9" class="img-fluid">
+                    <h5>Shirt Light</h5>
+                    <p>Price: $21.99</p>
+                    <button class="add-to-cart" data-product-id="9">Add to Cart</button>
+                    <div class="cart-message" style="display:none;">
+                        Added to cart. <a href="cart9.html">View Cart</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+   
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Adding to Cart Functionality
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const productId = button.getAttribute('data-product-id');
+                const cartMessage = button.nextElementSibling;
+                cartMessage.style.display = 'block';
+                setTimeout(() => {
+                    cartMessage.style.display = 'none';
+                }, 3000); // Hide after 3 seconds
+            });
+        });
+    </script>
+	
+	<section class="offer-section">
+    <div class="row align-items-center">
+        <!-- Offer details on the left -->
+        <div class="col-md-6">
+            <h1 class="offer-title">Special Offer!</h1>
+            <p class="offer-text">
+                Don't miss our exclusive offer! Get up to <strong>50% off</strong> on selected items for a limited time only. 
+                This is the best time to grab your favorite products at unbeatable prices. Hurry up before the offer ends!
+            </p>
+            <button class="offer-button">Shop Now</button>
+        </div>
+
+        <!-- Image on the right -->
+        <div class="col-md-6">
+            <img src="collect.png" alt="Special Offer Image" class="offer-img img-fluid" style="width: 80%;">
+        </div>
+    </div>
+</section>
+
+ <section class="testimonial-section">
+        <div class="container">
+            <h1 class="testimonial-title">What Our Customers Say</h1>
+
+            <div class="row">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center">
+                            <img src="rev.jpg" alt="Customer 1" class="customer-image">
+                            <div>
+                                <div class="customer-name">Mary</div>
+                                <div class="customer-position">CEO, ABC Company</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">
+                            "This service has been absolutely amazing. The support team was responsive and helped me every step of the way. 
+                            Highly recommended!"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center">
+                            <img src="eva.jpg" alt="Customer 2" class="customer-image">
+                            <div>
+                                <div class="customer-name">Jessica</div>
+                                <div class="customer-position">Manager, XYZ Ltd</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">
+                            "I was blown away by the quality of service. 
+							The team went above and beyond to ensure my satisfaction. Best of luck in the future"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center">
+                            <img src="coat.jpg" alt="Customer 3" class="customer-image">
+                            <div>
+                                <div class="customer-name">Peter</div>
+                                <div class="customer-position">Freelancer</div>
+                            </div>
+                        </div>
+                        <p class="testimonial-content">
+                            "I've never experienced customer service like this before. Every question was answered promptly. 
+                            Amazing experience!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>We are a company dedicated to providing top-notch services in the industry.<br> Our team is passionate about delivering high-quality solutions to our clients.</p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Blog</a></li>
+                    <li><a href="#" class="text-white">Testimonials</a></li>
+                    <li><a href="#" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: info@example.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="row mt-3">
+            <div class="col text-center">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Copyright Section -->
+        <div class="row mt-3">
+            <div class="col text-center">
+                <p class="mb-0">© 2024 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+	
+	
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Page Design</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Navbar Styling */
+        .navbar {
+            background-color: #343a40;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffbf00;
+        }
+
+        .navbar-nav .nav-link {
+            margin: 0 10px;
+            color: #ffffff;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffbf00;
+        }
+
+        .form-control {
+            width: 200px;
+        }
+
+        /* Banner Image Styling */
+        .banner {
+            background-image: url('sh.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: black;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        .banner p {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .banner button {
+            background-color: #ffbf00;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .banner button:hover {
+            background-color: #e6a800;
+        }
+
+        /* Shopping Cart Product Design */
+        .container {
+            margin-top: 30px;
+        }
+
+        .card {
+            border: none;
+        }
+
+        .card-img-top {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: left;
+        }
+
+        .card-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 1.5rem;
+            color: #000;
+        }
+
+        /* Price styling */
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        /* Button styling */
+        .btn-danger {
+            background-color: red;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+        }
+
+        .btn-danger:hover {
+            background-color: darkred;
+        }
+
+        .form-group label {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .form-group select {
+            padding: 5px;
+        }
+
+        .checkout-btn {
+            margin-top: 15px;
+            background-color: #ffbf00;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+			color:black;
+        }
+
+        .checkout-btn:hover {
+            background-color: #e6a800;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .banner h1 {
+                font-size: 2rem;
+            }
+            .banner p {
+                font-size: 1rem;
+            }
+            .banner {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .banner h1 {
+                font-size: 1.5rem;
+            }
+            .banner p {
+                font-size: 0.9rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">T-Crafty</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+ 
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Black Friday Sale</h1>
+            <p>Get up to 50%</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+
+    <br><br>
+    <!-- Shopping Cart Section -->
+    <div class="container mt-5">
+        <h1 class="text-center">Shopping Cart</h1>
+		<br><br>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <img src="orange.png" alt="T-shirt" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h2 class="card-title">T-Shirt Orange</h2>
+                <div class="price">$12.99</div>
+                <div class="form-group">
+                    <label for="size">Size:</label>
+                    <select class="form-control" id="size">
+                        <option value="M">M</option>
+                        <option value="S">S</option>
+                    </select>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="quantity">Quantity:</label>
+                    <select class="form-control" id="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+				<br>
+				<a href="checkout.html">
+                <button class="checkout-btn mt-3">Go to Checkout</button>
+				</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+	
+	<br><br>
+	<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                 <p>We are a company dedicated to providing top-notch services in the industry.<br> Our team is passionate about delivering high-quality solutions to our clients.</p>
+            </div>
+
+            <!-- Links Section -->
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white">Home</a></li>
+                    <li><a href="#" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Blog</a></li>
+                    <li><a href="#" class="text-white">Testimonials</a></li>
+                    <li><a href="#" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: info@example.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="row mt-3">
+            <div class="col text-center">
+                <h5>Follow Us</h5>
+                <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Copyright Section -->
+        <div class="row mt-3">
+            <div class="col text-center">
+                <p class="mb-0">© 2024 Your Company. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+	
+</body>
+</html>
